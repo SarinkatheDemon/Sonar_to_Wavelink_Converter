@@ -1,14 +1,13 @@
 import sqlite3
-import json
 import os
 import xml.etree.ElementTree as ET
 from xml.dom import minidom
 from pathlib import Path
 import tkinter as tk
 from tkinter import filedialog, messagebox
-import shutil
+import re
+import json
 
-# Mapping für Filtertypen
 TYPE_MAPPING = {
     "highPass": "0.0",
     "lowShelving": "1.0",
@@ -17,14 +16,12 @@ TYPE_MAPPING = {
     "lowPass": "4.0"
 }
 
-# Gain-Umrechnung dB → XML-Wert
 def db_to_xml_gain(g):
     return 0.9673 * (2 ** (g / 5.8420))
 
-# XML-Exportfunktion
-def create_wavelink_xml(preset_name, filters, position):
+def create_wavelink_xml(preset_name, filters):
     preset = ET.Element("Preset")
-    info = ET.SubElement(preset, "Info", Name=preset_name)
+    ET.SubElement(preset, "Info", Name=preset_name)
     params = ET.SubElement(preset, "Parameters")
 
     for i, f in enumerate(filters, 1):
@@ -34,17 +31,28 @@ def create_wavelink_xml(preset_name, filters, position):
         ET.SubElement(params, "PARAM", id=f"{band_prefix} Bypass", value="0.0")
         ET.SubElement(params, "PARAM", id=f"{band_prefix} Frequency", value=str(float(f["frequency"])))
         ET.SubElement(params, "PARAM", id=f"{band_prefix} Gain", value=str(gain_converted))
-        ET.SubElement(params, "PARAM", id=f"{band_prefix} Quality", value=str(float(f["qFactor"])))
+        ET.SubElement(params, "PARAM", id=f"{band_prefix} Quality", value=str(float(f.get("qFactor", 1.0))))
         ET.SubElement(params, "PARAM", id=f"{band_prefix} Type", value=f["type"])
         ET.SubElement(params, "PARAM", id=f"{band_prefix} Visible", value="1.0")
 
     return minidom.parseString(ET.tostring(preset)).toprettyxml(indent="  ")
 
-# EQ-Filter aus JSON extrahieren
-def extract_filters_with_type(json_str):
+def fix_and_parse_json(data_str):
     try:
-        parsed = json.loads(json_str)
+        # Fix JSON-like formatting
+        fixed = re.sub(r'(?<=\{|,)\s*([a-zA-Z0-9_]+)\s*:', r'"\1":', data_str)
+        fixed = re.sub(r',(\s*[}\]])', r'\1', fixed)
+        fixed = fixed.replace("true", "true").replace("false", "false").replace("null", "null")
+        return json.loads(fixed)
+    except:
+        return {}
+
+def extract_filters_with_type(data_str):
+    try:
+        parsed = fix_and_parse_json(data_str)
         eq = parsed.get("parametricEQ", {})
+        if not eq.get("enabled", False):
+            return []
         filters = []
         for i in range(1, 11):
             f = eq.get(f"filter{i}")
@@ -60,7 +68,6 @@ def extract_filters_with_type(json_str):
     except:
         return []
 
-# GUI für Dateiauswahl
 def select_file(title, filetypes):
     root = tk.Tk()
     root.withdraw()
@@ -72,7 +79,7 @@ def select_directory(title):
     return filedialog.askdirectory(title=title)
 
 def main():
-    db_path = select_file("Select your SteelSeries Sonar database.db", [("SQLite DB", "*.db"), ("Alle Dateien", "*.*")])
+    db_path = select_file("Select your SteelSeries Sonar database.db", [("SQLite DB", "*.db"), ("All Files", "*.*")])
     if not db_path:
         messagebox.showerror("Error", "No database selected.")
         return
@@ -82,24 +89,36 @@ def main():
         messagebox.showerror("Error", "No output folder selected.")
         return
 
-    conn = sqlite3.connect(db_path)
-    cursor = conn.cursor()
-    cursor.execute("SELECT name, data FROM configs WHERE name IS NOT NULL AND TRIM(name) != '' AND vad = 1 GROUP BY name;")
-    rows = cursor.fetchall()
+    try:
+        conn = sqlite3.connect(db_path)
+        cursor = conn.cursor()
+        cursor.execute("SELECT name, data FROM configs WHERE name IS NOT NULL AND TRIM(name) != '';")
+        rows = cursor.fetchall()
 
-    presets = []
-    for name, data in rows:
-        filters = extract_filters_with_type(data)
-        if filters:
-            presets.append({"name": name, "filters": filters})
+        if not rows:
+            messagebox.showinfo("No Presets", "No valid presets found in this database.")
+            return
 
-    for i, preset in enumerate(presets, start=10):
-        xml = create_wavelink_xml(preset["name"], preset["filters"], i)
-        safe_name = "".join(c for c in preset["name"] if c.isalnum() or c in " _-").rstrip()
-        with open(Path(out_dir) / f"{safe_name}.xml", "w", encoding="utf-8") as f:
-            f.write(xml)
+        name_count = {}
 
-    messagebox.showinfo("Done", f"{len(presets)} Presets successfully exported to: {out_dir}")
+        for name, data in rows:
+            filters = extract_filters_with_type(data)
+            if not filters:
+                continue
+
+            base_name = "".join(c for c in name if c.isalnum() or c in " _-").rstrip()
+            count = name_count.get(base_name, 0)
+            filename = f"{base_name}.xml" if count == 0 else f"{base_name}_{count+1}.xml"
+            name_count[base_name] = count + 1
+
+            xml = create_wavelink_xml(name, filters)
+            with open(Path(out_dir) / filename, "w", encoding="utf-8") as f:
+                f.write(xml)
+
+        messagebox.showinfo("Done", f"Export complete. Files written to:\n{out_dir}")
+
+    except Exception as e:
+        messagebox.showerror("Unexpected Error", str(e))
 
 if __name__ == "__main__":
     main()

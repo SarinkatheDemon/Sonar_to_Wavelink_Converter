@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<Preset>
+  <Info Name="Star Wars Jedi: Survivor"/>
+  <Parameters>
+    <PARAM id="Band 1 Filter Bypass" value="0.0"/>
+    <PARAM id="Band 1 Filter Frequency" value="85.0"/>
+    <PARAM id="Band 1 Filter Gain" value="1.971209"/>
+    <PARAM id="Band 1 Filter Quality" value="0.707"/>
+    <PARAM id="Band 1 Filter Type" value="2.0"/>
+    <PARAM id="Band 1 Filter Visible" value="1.0"/>
+    <PARAM id="Band 2 Filter Bypass" value="0.0"/>
+    <PARAM id="Band 2 Filter Frequency" value="120.0"/>
+    <PARAM id="Band 2 Filter Gain" value="1.226361"/>
+    <PARAM id="Band 2 Filter Quality" value="1.0"/>
+    <PARAM id="Band 2 Filter Type" value="2.0"/>
+    <PARAM id="Band 2 Filter Visible" value="1.0"/>
+    <PARAM id="Band 3 Filter Bypass" value="0.0"/>
+    <PARAM id="Band 3 Filter Frequency" value="4000.0"/>
+    <PARAM id="Band 3 Filter Gain" value="1.971209"/>
+    <PARAM id="Band 3 Filter Quality" value="1.0"/>
+    <PARAM id="Band 3 Filter Type" value="3.0"/>
+    <PARAM id="Band 3 Filter Visible" value="1.0"/>
+  </Parameters>
+</Preset>
