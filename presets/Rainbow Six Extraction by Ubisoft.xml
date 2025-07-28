@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<Preset>
+  <Info Name="Rainbow Six Extraction by Ubisoft"/>
+  <Parameters>
+    <PARAM id="Band 1 Filter Bypass" value="0.0"/>
+    <PARAM id="Band 1 Filter Frequency" value="50.0"/>
+    <PARAM id="Band 1 Filter Gain" value="0.474668"/>
+    <PARAM id="Band 1 Filter Quality" value="0.7071"/>
+    <PARAM id="Band 1 Filter Type" value="0.0"/>
+    <PARAM id="Band 1 Filter Visible" value="1.0"/>
+    <PARAM id="Band 2 Filter Bypass" value="0.0"/>
+    <PARAM id="Band 2 Filter Frequency" value="120.0"/>
+    <PARAM id="Band 2 Filter Gain" value="0.809596"/>
+    <PARAM id="Band 2 Filter Quality" value="0.7071"/>
+    <PARAM id="Band 2 Filter Type" value="2.0"/>
+    <PARAM id="Band 2 Filter Visible" value="1.0"/>
+    <PARAM id="Band 3 Filter Bypass" value="0.0"/>
+    <PARAM id="Band 3 Filter Frequency" value="730.0"/>
+    <PARAM id="Band 3 Filter Gain" value="1.155724"/>
+    <PARAM id="Band 3 Filter Quality" value="0.7071"/>
+    <PARAM id="Band 3 Filter Type" value="2.0"/>
+    <PARAM id="Band 3 Filter Visible" value="1.0"/>
+    <PARAM id="Band 4 Filter Bypass" value="0.0"/>
+    <PARAM id="Band 4 Filter Frequency" value="3000.0"/>
+    <PARAM id="Band 4 Filter Gain" value="1.380851"/>
+    <PARAM id="Band 4 Filter Quality" value="10.0"/>
+    <PARAM id="Band 4 Filter Type" value="2.0"/>
+    <PARAM id="Band 4 Filter Visible" value="1.0"/>
+    <PARAM id="Band 5 Filter Bypass" value="0.0"/>
+    <PARAM id="Band 5 Filter Frequency" value="18000.0"/>
+    <PARAM id="Band 5 Filter Gain" value="1.380851"/>
+    <PARAM id="Band 5 Filter Quality" value="0.5"/>
+    <PARAM id="Band 5 Filter Type" value="3.0"/>
+    <PARAM id="Band 5 Filter Visible" value="1.0"/>
+  </Parameters>
+</Preset>

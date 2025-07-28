@@ -1,0 +1,66 @@
+<?xml version="1.0" ?>
+<Preset>
+  <Info Name="Destiny 2 by Bungie"/>
+  <Parameters>
+    <PARAM id="Band 1 Filter Bypass" value="0.0"/>
+    <PARAM id="Band 1 Filter Frequency" value="33.57"/>
+    <PARAM id="Band 1 Filter Gain" value="0.653908"/>
+    <PARAM id="Band 1 Filter Quality" value="1.0"/>
+    <PARAM id="Band 1 Filter Type" value="1.0"/>
+    <PARAM id="Band 1 Filter Visible" value="1.0"/>
+    <PARAM id="Band 2 Filter Bypass" value="0.0"/>
+    <PARAM id="Band 2 Filter Frequency" value="86.31"/>
+    <PARAM id="Band 2 Filter Gain" value="1.089155"/>
+    <PARAM id="Band 2 Filter Quality" value="2.752"/>
+    <PARAM id="Band 2 Filter Type" value="2.0"/>
+    <PARAM id="Band 2 Filter Visible" value="1.0"/>
+    <PARAM id="Band 3 Filter Bypass" value="0.0"/>
+    <PARAM id="Band 3 Filter Frequency" value="215.59"/>
+    <PARAM id="Band 3 Filter Gain" value="0.848945"/>
+    <PARAM id="Band 3 Filter Quality" value="0.707"/>
+    <PARAM id="Band 3 Filter Type" value="2.0"/>
+    <PARAM id="Band 3 Filter Visible" value="1.0"/>
+    <PARAM id="Band 4 Filter Bypass" value="0.0"/>
+    <PARAM id="Band 4 Filter Frequency" value="272.47"/>
+    <PARAM id="Band 4 Filter Gain" value="0.955891"/>
+    <PARAM id="Band 4 Filter Quality" value="0.707"/>
+    <PARAM id="Band 4 Filter Type" value="2.0"/>
+    <PARAM id="Band 4 Filter Visible" value="1.0"/>
+    <PARAM id="Band 5 Filter Bypass" value="0.0"/>
+    <PARAM id="Band 5 Filter Frequency" value="500.0"/>
+    <PARAM id="Band 5 Filter Gain" value="0.9673"/>
+    <PARAM id="Band 5 Filter Quality" value="0.707"/>
+    <PARAM id="Band 5 Filter Type" value="2.0"/>
+    <PARAM id="Band 5 Filter Visible" value="1.0"/>
+    <PARAM id="Band 6 Filter Bypass" value="0.0"/>
+    <PARAM id="Band 6 Filter Frequency" value="1010.0"/>
+    <PARAM id="Band 6 Filter Gain" value="1.226361"/>
+    <PARAM id="Band 6 Filter Quality" value="1.934"/>
+    <PARAM id="Band 6 Filter Type" value="2.0"/>
+    <PARAM id="Band 6 Filter Visible" value="1.0"/>
+    <PARAM id="Band 7 Filter Bypass" value="0.0"/>
+    <PARAM id="Band 7 Filter Frequency" value="2000.0"/>
+    <PARAM id="Band 7 Filter Gain" value="0.900832"/>
+    <PARAM id="Band 7 Filter Quality" value="0.707"/>
+    <PARAM id="Band 7 Filter Type" value="2.0"/>
+    <PARAM id="Band 7 Filter Visible" value="1.0"/>
+    <PARAM id="Band 8 Filter Bypass" value="0.0"/>
+    <PARAM id="Band 8 Filter Frequency" value="3640.0"/>
+    <PARAM id="Band 8 Filter Gain" value="1.316848"/>
+    <PARAM id="Band 8 Filter Quality" value="1.034"/>
+    <PARAM id="Band 8 Filter Type" value="2.0"/>
+    <PARAM id="Band 8 Filter Visible" value="1.0"/>
+    <PARAM id="Band 9 Filter Bypass" value="0.0"/>
+    <PARAM id="Band 9 Filter Frequency" value="5060.0"/>
+    <PARAM id="Band 9 Filter Gain" value="1.183477"/>
+    <PARAM id="Band 9 Filter Quality" value="3.652"/>
+    <PARAM id="Band 9 Filter Type" value="2.0"/>
+    <PARAM id="Band 9 Filter Visible" value="1.0"/>
+    <PARAM id="Band 10 Filter Bypass" value="0.0"/>
+    <PARAM id="Band 10 Filter Frequency" value="9900.0"/>
+    <PARAM id="Band 10 Filter Gain" value="1.155724"/>
+    <PARAM id="Band 10 Filter Quality" value="2.055"/>
+    <PARAM id="Band 10 Filter Type" value="2.0"/>
+    <PARAM id="Band 10 Filter Visible" value="1.0"/>
+  </Parameters>
+</Preset>

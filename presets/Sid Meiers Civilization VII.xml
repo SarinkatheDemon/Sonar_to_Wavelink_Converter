@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<Preset>
+  <Info Name="Sid Meier's Civilization VII"/>
+  <Parameters>
+    <PARAM id="Band 1 Filter Bypass" value="0.0"/>
+    <PARAM id="Band 1 Filter Frequency" value="136.4"/>
+    <PARAM id="Band 1 Filter Gain" value="1.364565"/>
+    <PARAM id="Band 1 Filter Quality" value="0.707"/>
+    <PARAM id="Band 1 Filter Type" value="2.0"/>
+    <PARAM id="Band 1 Filter Visible" value="1.0"/>
+    <PARAM id="Band 2 Filter Bypass" value="0.0"/>
+    <PARAM id="Band 2 Filter Frequency" value="239.7"/>
+    <PARAM id="Band 2 Filter Gain" value="1.750669"/>
+    <PARAM id="Band 2 Filter Quality" value="0.707"/>
+    <PARAM id="Band 2 Filter Type" value="2.0"/>
+    <PARAM id="Band 2 Filter Visible" value="1.0"/>
+    <PARAM id="Band 3 Filter Bypass" value="0.0"/>
+    <PARAM id="Band 3 Filter Frequency" value="845.9"/>
+    <PARAM id="Band 3 Filter Gain" value="0.790611"/>
+    <PARAM id="Band 3 Filter Quality" value="0.707"/>
+    <PARAM id="Band 3 Filter Type" value="2.0"/>
+    <PARAM id="Band 3 Filter Visible" value="1.0"/>
+    <PARAM id="Band 4 Filter Bypass" value="0.0"/>
+    <PARAM id="Band 4 Filter Frequency" value="3070.0"/>
+    <PARAM id="Band 4 Filter Gain" value="1.380851"/>
+    <PARAM id="Band 4 Filter Quality" value="0.707"/>
+    <PARAM id="Band 4 Filter Type" value="2.0"/>
+    <PARAM id="Band 4 Filter Visible" value="1.0"/>
+    <PARAM id="Band 5 Filter Bypass" value="0.0"/>
+    <PARAM id="Band 5 Filter Frequency" value="6900.0"/>
+    <PARAM id="Band 5 Filter Gain" value="1.947959"/>
+    <PARAM id="Band 5 Filter Quality" value="0.707"/>
+    <PARAM id="Band 5 Filter Type" value="2.0"/>
+    <PARAM id="Band 5 Filter Visible" value="1.0"/>
+  </Parameters>
+</Preset>
